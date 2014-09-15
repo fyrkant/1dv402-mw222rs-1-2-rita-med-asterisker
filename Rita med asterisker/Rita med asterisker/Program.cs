@@ -21,7 +21,7 @@ namespace Rita_med_asterisker
                     Console.Write(" ");
                 }
 
-                // Med hjälp av en switch-sats bestäms färgen på kolumnen. 
+                // Med hjälp av en switch-sats bestäms färg. 
                 switch (rad % 3)
                 {
                     case 0:
@@ -35,7 +35,7 @@ namespace Rita_med_asterisker
                         break;   
                 }
 
-                // En andra, nästlad, for-loop skriver ut en kolumn med 39 asterisker. 
+                // En andra, nästlad, for-loop skriver ut 39 asterisker. 
                     for (int kolumn = 0; kolumn <= 38; kolumn++)
                     {
                         Console.Write("* ");
