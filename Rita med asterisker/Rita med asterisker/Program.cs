@@ -10,32 +10,39 @@ namespace Rita_med_asterisker
     {
         static void Main(string[] args)
         {
-            for (int rad = 2; rad <= 25; rad++)
+
+            // Skriv ut 25 rader
+            for (int rad = 1; rad <= 25; rad++)
             {
+
+                // Om radnumret är ett udda tal läggs ett mellanslag in.
                 if (rad % 2 != 0)
                 {
                     Console.Write(" ");
                 }
 
-                    for (int kolumn = 2; kolumn <= 39; kolumn++)
-                    {
+                // Med hjälp av en switch-sats där 
+                switch (rad % 3)
+                {
+                    case 1:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                    case 0:
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;   
+                }
 
+                    for (int kolumn = 1; kolumn <= 39; kolumn++)
+                    {
                         Console.Write("* ");
                     }
 
+                Console.ResetColor();
                 Console.WriteLine();
             }
-
-
-
         }
-        //private static byte ReadOddByte()
-        //{
-            
-        //}
-        //private static void RenderTriangle(byte cols)
-        //{
-
-        //}
     }
 }
