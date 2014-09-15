@@ -11,35 +11,37 @@ namespace Rita_med_asterisker
         static void Main(string[] args)
         {
 
-            // Skriv ut 25 rader
-            for (int rad = 1; rad <= 25; rad++)
+            // En första for-loop bestämmer att innehållande kod skall loopas 25 gånger.
+            for (int rad = 0; rad <= 24; rad++)
             {
 
-                // Om radnumret är ett udda tal läggs ett mellanslag in.
+                // Om variabeln rad är ett udda tal läggs ett mellanslag till först på raden.
                 if (rad % 2 != 0)
                 {
                     Console.Write(" ");
                 }
 
-                // Med hjälp av en switch-sats där 
+                // Med hjälp av en switch-sats bestäms färgen på kolumnen. 
                 switch (rad % 3)
                 {
-                    case 1:
+                    case 0:
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         break;
-                    case 0:
+                    case 1:
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         break;
-                    default:
+                    case 2:
                         Console.ForegroundColor = ConsoleColor.Green;
                         break;   
                 }
 
-                    for (int kolumn = 1; kolumn <= 39; kolumn++)
+                // En andra, nästlad, for-loop skriver ut en kolumn med 39 asterisker. 
+                    for (int kolumn = 0; kolumn <= 38; kolumn++)
                     {
                         Console.Write("* ");
                     }
 
+                // Färgen återställs till standard.
                 Console.ResetColor();
                 Console.WriteLine();
             }
