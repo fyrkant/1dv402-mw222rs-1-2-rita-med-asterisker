@@ -12,11 +12,14 @@ namespace Rita_med_asterisker
         {
             while (true)
             {
+                // Läs in ett udda nummer mellan 1 och 79.
                 byte cols = ReadOddByte();
                 Console.WriteLine();
 
+                // Kalla på metoden Rendertriangle som skapar triangeln.
                 RenderTriangle(cols);
 
+                // Fråga användaren om hen vill skapa en ny triangel eller avsluta programmet.
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.Write("\nValfri tangent påbörjar ny beräkning - [ESC] avslutar programmet.\n");
                 Console.ResetColor();
@@ -66,16 +69,18 @@ namespace Rita_med_asterisker
 
         static void RenderTriangle(byte cols)
         {
+            const string space = " ";
+            const string star = "*";
             for (int row = 1; row <= (cols + 1) / 2; row++)
             {
                 for (int blankSpace = cols - row; blankSpace > cols / 2; blankSpace--)
                 {
-                    Console.Write(" ");
+                    Console.Write(space);
                 }
 
                 for (int asterisk = 0; asterisk <= (row - 1) * 2; ++asterisk)
                 {
-                    Console.Write("*");
+                    Console.Write(star);
                 }
                 Console.WriteLine();
             }
